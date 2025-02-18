@@ -21,6 +21,7 @@ Opções de tecnologia serverless:
   - Muito apoio, documentação, tutoriais disponíveis.
   - Banco de dados NoSQL;
   - Migração posterior para servidor dedicado é possível (através de JSON), mas parece complicada.
+  - Tutorial: https://www.youtube.com/watch?v=p9pgI3Mg-So&t=1125s
 -> Amplify (AWS):
   - Gratuita dentro de período e limite de processamento;
   - Muita documentação e tutoriais, mas parte do funcionamento pode parecer "mágico" e esconder o funcionamento (segundo Stack Overflow);
@@ -30,7 +31,7 @@ Opções de tecnologia serverless:
 
 3 - Desenvolvimento do frontend do projeto.
 
-4 - Desenvolvimento do backenddo projeto (com repositório de dados associado).
+4 - Desenvolvimento do backend do projeto (com repositório de dados associado).
 
 5 - Vídeo de no máximo 1 minuto apresentando o projeto concluído.
 

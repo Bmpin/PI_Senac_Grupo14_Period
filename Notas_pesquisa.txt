@@ -1,0 +1,38 @@
+SOBRE PROVA DE CONCEITO
+Da fonte: https://mobivery.com/en/proof-of-concept/
+Uma prova de conceito (PoC) é uma metodologia que testa a viabilidade do software antes do design e desenvolvimento, confirmando a viabilidade e os ajustes necessários em cenários do mundo real.
+A prova de conceito não é um produto, mas um exercício de entendimento técnico da viabilidade da ideia.
+O propósito da nossa prova de conceito (PoC) será demonstrar que a ideia é tecnicamente viável e pode ser construída. 
+Além disso, indicará a direção técnica correta para que o aplicativo atinja seu propósito, analisando dependências externas e avaliando a necessidade de produtos de terceiros.
+...  se um objetivo claro for definido desde o início, ele nos permitirá perceber as limitações, vantagens e desvantagens da solução e nos ajudará a priorizar a funcionalidade de forma mais inteligente.
+
+Da fonte: https://www.netguru.com/blog/proof-of-concept-in-software-development
+Com uma prova de conceito, você obtém evidências de que sua ideia é viável, bem como uma explicação de como ela funcionará e por que vale a pena o financiamento.
+.. benefícios que as empresas obterão com um PoC (resumidos): Avaliação da viabilidade técnica, Verificação inicial das necessidades do mercado, Compreendendo as limitações do produto, 
+Tomando decisões racionais sobre orçamento, explicar por que e como sua ideia funcionará, acelerar o lançamento.
+
+ITENS DO TRABALHO:
+1 - Revisitar o projeto apresentado e definir qual será a prova de conceito que precisa ser desenvolvida.
+
+2 - Preparação do ambiente de desenvolvimento do projeto (seleção de tecnologias de frontend, backende banco de dados).
+Opções de tecnologia serverless:
+-> Firebase (Google):
+  - Gratuita (com limites de uso);
+  - Muito apoio, documentação, tutoriais disponíveis.
+  - Banco de dados NoSQL;
+  - Migração posterior para servidor dedicado é possível (através de JSON), mas parece complicada.
+-> Amplify (AWS):
+  - Gratuita dentro de período e limite de processamento;
+  - Muita documentação e tutoriais, mas parte do funcionamento pode parecer "mágico" e esconder o funcionamento (segundo Stack Overflow);
+  - Banco de dados pode ser NoSQL (Dynamo DB) ou relacional (RDS);
+  - Migração posterior de servidor é simplificada dentro da própria plataforma com instâncias EC2.
+  - Fica sempre perigosamente próxima das opções pagas!
+
+3 - Desenvolvimento do frontend do projeto.
+
+4 - Desenvolvimento do backenddo projeto (com repositório de dados associado).
+
+5 - Vídeo de no máximo 1 minuto apresentando o projeto concluído.
+
+6 - Subir todo o projeto em um GitHub.
+

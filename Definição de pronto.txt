@@ -1,0 +1,24 @@
+Definição de pronto
+
+Aqui estão descritos os itens que deverão estar funcionando no protótipo da aplicação Period. Este primeiro protótipo não será uma versão completa do aplicativo, com todas as funcionalidades.
+O objetivo do protótipo é emular uma jornada de usuário com parte das funcionalidades, para ser usado como prova de conceito da aplicação.
+
+- Execução do aplicativo, abrindo na tela Inicial (1).
+  - Dúvida: oferecer também OAuth (Google, Facebook, X, ...)?
+- Usuário clica em 'Cadastrar-se'. 
+- É aberta tela de Cadastro (2).
+- Usuário cria cadastro.
+- É aberta tela de Mensagem (3).
+- Usuário recebe e-mail e confirma seu cadastro.
+- Cadastro é criado com sucesso no banco de dados.
+  - Ideia: no vídeo, mostrar funcionamento de frontend e backend simultâneo, com telas lado a lado?
+- Usuário volta para a aplicação e clica em 'Ir para login'.
+- Usuário realiza login.
+- Login e senha são validados pelo banco de dados/backend.
+- Tela Calendário (4) é aberta, juntamente com janela modal para inserção de dados iniciais.
+- Usuário insere dados solicitados - datas iniciais e finais dos 3 últimos ciclos.
+  - Neste modal há também a opção 'Não lembro', que não será tratada nesta jornada.
+- Dados são inseridos no banco de dados.
+- Backend calcula duração média do ciclo, prováveis datas das 3 próximas ovulações, e prováveis datas das 3 próximas menstruações.
+- Tela Calendário é mostrada novamente, agora mostrando datas relevantes para o mês atual marcadas no calendário.
+

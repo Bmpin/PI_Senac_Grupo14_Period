@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Period - Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href ="css/fonts.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <div class="container">
+        <h1>Period</h1>
+        
+        <form id="loginForm">
+            <label for="email">E-mail</label>
+            <input type="email" id="email" placeholder="Digite seu e-mail" required>
+            
+            <label for="password">Senha</label>
+            <input type="password" id="password" placeholder="Digite sua senha" required>
+            
+            <div class="captcha-container">
+                <input type="checkbox" id="captcha">
+                <label for="captcha">Captcha</label>
+            </div>
+
+            <button type="submit" class="btn">Entrar</button>
+            <a href="cadastro.html">
+                <button type="button" class="btn secondary" id="signup">Cadastrar-se</button>
+            </a>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,11 +1,12 @@
 body {
-    font-family: "Montserrat",sans-serif;
+    font-family: "Montserrat", sans-serif;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f8f8f8;
     margin: 0;
+    padding: 20px 0 80px; 
 }
 
 .container {
@@ -15,12 +16,15 @@ body {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
     text-align: center;
     width: 90%;
-    max-width: 400px;
+    max-width: 800px; 
+    margin: 20px auto;
+    position: relative;
 }
 
 h1 {
     color: #4b8c4b;
     font-size: 28px;
+    margin-bottom: 15px;
 }
 
 label {
@@ -28,22 +32,24 @@ label {
     text-align: left;
     margin-top: 10px;
     font-size: 14px;
+    color: #555;
 }
 
 input {
     width: 100%;
-    max-width: 100%;
     padding: 10px;
     margin-top: 5px;
     border: 1px solid #ccc;
     border-radius: 5px;
     box-sizing: border-box;
+    font-family: "Montserrat", sans-serif; 
 }
 
 .captcha-container {
     display: flex;
     align-items: center;
     margin-top: 10px;
+    gap: 8px; 
 }
 
 .captcha-container input {
@@ -62,7 +68,7 @@ input {
     font-size: 16px;
     font-weight: bold;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .secondary {
@@ -71,18 +77,115 @@ input {
 
 .btn:hover {
     opacity: 0.8;
+    transform: translateY(-1px);
 }
 
 .btn:active {
     transform: scale(0.98);
 }
 
+.image-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.image-container img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 8px; 
+}
+
+.navbar {
+    width: 90%;
+    max-width: 800px;
+    margin: -10px auto 20px;
+    background-color: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); 
+    z-index: 1;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #4b8c4b;
+    font-size: 24px;
+    transition: transform 0.3s ease;
+}
+
+.navbar a:hover {
+    transform: scale(1.1);
+}
+
+.navbar a.active {
+    color: #3c733c;
+}
+
+
+.fc {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.fc-toolbar-title {
+    font-size: 1.4rem !important;
+    color: #2d2d2d;
+    font-weight: 600;
+}
+
+.fc-daygrid-day {
+    padding: 8px !important;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.fc-daygrid-day:hover {
+    background-color: #f8f8f8 !important;
+}
+
+.fc-daygrid-day.fc-day-today {
+    background-color: #4b8c4b !important;
+    color: white !important;
+}
+
+.fc-col-header-cell {
+    padding: 10px 0 !important;
+    color: #666;
+    font-weight: 500;
+    background: #f8f8f8 !important;
+}
+
+.status-menstrual {
+    text-align: center;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    padding: 8px;
+    border-radius: 8px;
+    background: #f8f8f8; 
+}
+
 @media (max-width: 400px) {
     .container {
         width: 95%;
+        padding: 15px;
     }
+    
     .btn {
         font-size: 14px;
         padding: 8px;
     }
+    
+    .navbar a {
+        font-size: 20px;
+    }
+}
+
+#calendar {
+    max-width: 90%;
+    width: 600px;
+    margin: 20px auto;
+    padding-bottom: 20px;
 }

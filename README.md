@@ -33,30 +33,19 @@ A **prova de conceito** do **Period** se baseia na **validação da necessidade 
    - O aplicativo prevê ciclos menstruais **com base em dados inseridos pelo usuário**, permitindo **exportação segura** para médicos ou parceiros.
    - Diferencia-se por ser **100% gratuito**, sem anúncios invasivos e respeitando a **privacidade dos dados**.
 
-
-## 📱 Funcionalidades
 ## 🛠 Tecnologias Utilizadas
-- [Linguagem/Framework principal do projeto]
-- [Banco de dados utilizado]
-- [Ferramentas e APIs adicionais]
+- Firebase: Escolhemos essa tecnologia serverless para a preparação do ambiente de trabalho pelo custo-benefício de seu uso, sendo - Uma plataforma gratuita, que mesmo tendo limites, possibilitou que o projeto fosse realizado sem empecilhos; É uma plataforma que possui muita informação sobre ela na web, facilitando até mesmo quem nunca usou, ter mais facilidade de aprender; ter funcionalidades de banco de dados NoSQL; Ser possível uma migração para um servidor dedicado, que mesmo parecendo complicado, devido a quantiodade de informações sobre o Firebase, ela se torna uma opção muito viável; A adaptação do grupo com o Firebase foi rápida.
+- Backend: Foi utilizada a linguagem C#. Foi escolhida essa linguagem devido o grupo tê-la estudado em aula e já ter conhecimento sobre.
+- Frontend: Foram utilizadas as linguagens HTML, CSS e JavaScritp. Foram escolhidas essas linguagens devido o grupo tê-las estudado em aula, portanto, tem mais facilidade de uso.
 
-## 🖥 
 
 ## 📌 Como Executar o Projeto
-```bash
-# Clone este repositório
-git clone https://github.com/seu-usuario/period-app.git
+- O usuário começa o fluxo em calendario.html.
+- Conclua o cadastro completo.
+- O usuário será enviado para o index.html.
+- Após fazer o login ele envia para o calendario.html.
 
-# Acesse a pasta do projeto
-cd period-app
 
-# Instale as dependências
-[comando de instalação]
-
-# Execute a aplicação
-[comando de execução]
-```
----
 💡 Desenvolvido por **Grupo 14 - SENAC**:
 - **BRUNA MARTINS PINTO**
 - **GUILHERME ARMAGNI HONORATO**

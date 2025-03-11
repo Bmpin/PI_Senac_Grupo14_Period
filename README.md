@@ -46,10 +46,7 @@ A **prova de conceito** do **Period** se baseia na **validação da necessidade 
 - Após fazer o login ele envia para o calendario.html.
 
 ## Vídeo
-<video width="100%" controls>
-  <source src="(https://github.com/Bmpin/PI_Senac_Grupo14_Period/issues/7#issue-2908917946)" type="video/mp4">
-  Seu navegador não suporta vídeos.
-</video>
+[🎬 Assista à demonstração](https://github.com/Bmpin/PI_Senac_Grupo14_Period/issues/7#issue-2908917946)
 
 💡 Desenvolvido por **Grupo 14 - SENAC**:
 - **BRUNA MARTINS PINTO**

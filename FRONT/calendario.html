@@ -8,7 +8,27 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar@5.11.3/main.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-
+        .loading {
+            display: none;
+            font-size: 14px;
+            color: #555;
+            margin-top: 10px;
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #ff4081;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-align: center;
+        }
+        .btn.secondary {
+            background-color: #ccc;
+        }
     </style>
 </head>
 <body>
@@ -17,34 +37,132 @@
         <div class="image-container">
             <img src="period_calendario.jpg" alt="Ilustração de mulher meditando com árvores ao fundo e velas ao lado.">
         </div>
+
         <div class="status-menstrual">
-            <p><strong>12 dias até a menstruação</strong></p>
+            <p id="statusText"><strong>Carregando...</strong></p>
         </div>
-        <div id='calendar'></div>
+
+        <p class="loading" id="loadingMessage">Carregando suas datas...</p>
+
+        <input type="date" id="date1">
+        <input type="date" id="date2">
+        <input type="date" id="date3">
+
+        <button id="saveDatesBtn" class="btn">Salvar Datas</button>
+        <button id="getDatesBtn" class="btn secondary">Consultar Datas</button>
 
         <nav class="navbar">
             <a href="calendario.html" class="active">
                 <i class="fa-solid fa-calendar"></i>
             </a>
-    
             <a href="estatistica.html">
                 <i class="fas fa-chart-bar"></i>
             </a>
-    
             <a href="anotacoes.html">
                 <i class="fa-regular fa-face-smile"></i>
             </a>
-    
             <a href="perfil.html">
                 <i class="fa-regular fa-user"></i>
             </a>
         </nav>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/pt-br.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let calendarEl = document.getElementById("calendar");
+            let calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: "dayGridMonth",
+                locale: "pt-br"
+            });
+            calendar.render();
+        });
     
-
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/main.min.js'></script>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.11.3/locales/pt-br.js'></script>
-    <script src="script_calendario.js"></script>
+        const API_URL = "https://localhost:44376/api/Home";
+    
+        document.getElementById("saveDatesBtn").addEventListener("click", async () => {
+            const date1 = new Date(document.getElementById("date1").value);
+            const date2 = new Date(document.getElementById("date2").value);
+            const date3 = new Date(document.getElementById("date3").value);
+    
+            if (!date1 || !date2 || !date3) {
+                alert("Por favor, selecione todas as três datas.");
+                return;
+            }
+    
+            const requestBody = {
+                data1: date1.toISOString(),
+                data2: date2.toISOString(),
+                data3: date3.toISOString()
+            };
+    
+            try {
+                let response = await fetch(`${API_URL}/save-dates`, {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json"
+                    },
+                    body: JSON.stringify(requestBody)
+                });
+    
+                let data = await response.json();
+                alert(data.message || "Erro ao salvar as datas.");
+            } catch (error) {
+                alert("Erro de conexão. Verifique sua internet.");
+                console.error(error);
+            }
+        });
+    
+        document.getElementById("getDatesBtn").addEventListener("click", async () => {
+            try {
+                let response = await fetch(`${API_URL}/get-dates`);
+                let data = await response.json();
+    
+                if (data.error) {
+                    alert(data.error);
+                    return;
+                }
+    
+                document.getElementById("date1").value = formatarData(data.data1);
+                document.getElementById("date2").value = formatarData(data.data2);
+                document.getElementById("date3").value = formatarData(data.data3);
+    
+                // Aguarda 5 segundos antes de calcular a próxima menstruação
+                setTimeout(() => {
+                    if (data.data3) {
+                        calcularProximaMenstruacao(data.data3);
+                    } else {
+                        console.warn("data3 está indefinida. Função de cálculo não será chamada.");
+                    }
+                }, 5000);
+                
+            } catch (error) {
+                alert("Erro ao buscar as datas.");
+                console.error(error);
+            }
+        });
+    
+        function calcularProximaMenstruacao(ultimaData) {
+            console.log("Última data recebida:", ultimaData);
+    
+            if (!ultimaData) return;
+    
+            let ultima = new Date(ultimaData);
+            let proxima = new Date(ultima);
+            proxima.setDate(proxima.getDate() + 28);
+    
+            let statusText = `Próxima menstruação prevista para ${proxima.toLocaleDateString("pt-BR")}`;
+            document.getElementById("statusText").innerHTML = `<strong>${statusText}</strong>`;
+        }
+    
+        function formatarData(data) {
+            if (!data) return "";
+            let dateObj = new Date(data);
+            return dateObj.toISOString().split("T")[0];
+        }
+    </script>
+    
+    
 </body>
 </html>

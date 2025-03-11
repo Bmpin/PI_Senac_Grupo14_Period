@@ -1,0 +1,9 @@
+﻿ConfigSdk/*.json
+
+appsettings.json
+appsettings.Development.json
+secrets.json
+
+bin/
+obj/
+.vscode/
